@@ -2,245 +2,389 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ali Iranmanesh</title>
-<meta name="description" content="Ali Iranmanesh, undergraduate researcher in AI safety and security at Penn State.">
+<meta name="description" content="Ali Iranmanesh. AI safety and security research: adversarial robustness, embodied AI, and LLM evaluation.">
+<meta property="og:title" content="Ali Iranmanesh">
+<meta property="og:description" content="AI safety and security research: adversarial robustness, embodied AI, and LLM evaluation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aliiiranmanesh.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #1a1a1a;
-    --muted: #5c5c5c;
-    --rule: #dcdcdc;
-    --link: #8c2f39;
-    --bg: #fffdfa;
+:root{
+  --paper:#fbfbf8;
+  --ink:#17191c;
+  --muted:#6f747c;
+  --rule:#e3e2dc;
+  --accent:#1d5c58;
+  --flag:#8a4b1c;
+  --serif:"Source Serif 4",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --measure:44rem;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#131417;
+    --ink:#e8e7e2;
+    --muted:#9096a0;
+    --rule:#2a2c31;
+    --accent:#6fbfae;
+    --flag:#d09a63;
   }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.62;
+  font-feature-settings:"onum" 1;
+}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.5rem 6rem}
 
-  html { -webkit-text-size-adjust: 100%; }
+/* ---------- nav ---------- */
+nav{
+  max-width:var(--measure);margin:0 auto;padding:1.75rem 1.5rem 0;
+  display:flex;gap:1.5rem;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+}
+nav a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+nav a:hover{color:var(--ink);border-bottom-color:var(--accent)}
 
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: Charter, Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 760px;
-    padding: 56px 24px 96px;
-  }
+/* ---------- links ---------- */
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(29,92,88,.28)}
+a:hover{border-bottom-color:var(--accent)}
+@media (prefers-color-scheme: dark){a{border-bottom-color:rgba(111,191,174,.3)}}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
-  a { color: var(--link); text-decoration: none; border-bottom: 1px solid rgba(140,47,57,.3); }
-  a:hover { border-bottom-color: var(--link); }
-  a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 2px; }
+/* ---------- header ---------- */
+header{padding-top:3.25rem;display:flex;gap:1.75rem;align-items:flex-start}
+header img{
+  width:112px;height:112px;object-fit:cover;border-radius:2px;
+  filter:grayscale(100%);flex:none;
+}
+h1{font-size:2.05rem;line-height:1.1;font-weight:700;margin:.1rem 0 .5rem;letter-spacing:-.015em}
+.topics{
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;
+  color:var(--muted);text-transform:uppercase;margin:0 0 .85rem
+}
+.standfirst{margin:0;font-size:1rem;color:var(--ink)}
+.standfirst .sub{color:var(--muted)}
 
-  h1 {
-    font-size: 34px;
-    font-weight: 600;
-    letter-spacing: .01em;
-    margin: 0 0 22px;
-  }
+.links{
+  display:flex;flex-wrap:wrap;gap:1.1rem;margin-top:1.05rem;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.03em
+}
+.links a{border-bottom:1px solid var(--rule);color:var(--ink)}
+.links a:hover{border-bottom-color:var(--accent);color:var(--accent)}
 
-  h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 18px;
-  }
+/* ---------- sections ---------- */
+section{margin-top:3.5rem}
+h2{
+  font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);
+  margin:0 0 1.5rem;padding-bottom:.55rem;border-bottom:1px solid var(--rule)
+}
+p{margin:0 0 1rem}
+.intro p:last-child{margin-bottom:0}
 
-  section { border-top: 1px solid var(--rule); padding-top: 26px; margin-top: 34px; }
+/* ---------- entry grid ---------- */
+.entry{
+  display:grid;grid-template-columns:1fr 8.5rem;gap:.35rem 1.5rem;
+  padding:1.35rem 0;border-bottom:1px solid var(--rule)
+}
+.entry:first-of-type{padding-top:.15rem}
+.entry:last-of-type{border-bottom:none;padding-bottom:.25rem}
+.meta{
+  grid-column:2;grid-row:1/span 4;
+  font-family:var(--mono);font-size:.72rem;line-height:1.5;
+  color:var(--muted);text-align:right;padding-top:.28rem
+}
+.title{grid-column:1;font-size:1.06rem;font-weight:600;line-height:1.35;margin:0}
+.authors{grid-column:1;font-size:.9rem;color:var(--muted);margin:.3rem 0 0}
+.authors strong{color:var(--ink);font-weight:600}
+.blurb{grid-column:1;font-size:.96rem;margin:.55rem 0 0}
+.filelinks{
+  grid-column:1;margin-top:.6rem;
+  font-family:var(--mono);font-size:.74rem;color:var(--muted)
+}
+.filelinks a{border-bottom:none;color:var(--accent)}
+.filelinks a:hover{border-bottom:1px solid var(--accent)}
+.filelinks span{padding:0 .45rem;color:var(--rule)}
 
-  .intro { display: flex; gap: 28px; align-items: flex-start; }
-  .intro img {
-    width: 168px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 3px;
-    flex: none;
-  }
-  .intro p { margin: 0 0 14px; }
-  .intro p:last-child { margin-bottom: 0; }
+/* ---------- status badge: the one loud element ---------- */
+.badge{
+  display:inline-block;font-family:var(--mono);font-size:.66rem;
+  letter-spacing:.09em;text-transform:uppercase;
+  padding:.16rem .42rem;border-radius:2px;margin-bottom:.5rem;
+  background:var(--ink);color:var(--paper)
+}
+.badge.pending{background:transparent;color:var(--flag);border:1px solid var(--flag)}
+.role{grid-column:1;font-size:1.02rem;font-weight:600;margin:0}
+.where{grid-column:1;font-size:.9rem;color:var(--muted);margin:.15rem 0 0}
 
-  .links { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14.5px; }
-  .links a { margin-right: 14px; display: inline-block; }
+/* ---------- compact list rows ---------- */
+.row{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;
+  padding:.95rem 0;border-bottom:1px solid var(--rule)
+}
+.row:last-child{border-bottom:none}
+.row .left{flex:1}
+.row .name{font-weight:600;font-size:1rem}
+.row .note{font-size:.92rem;color:var(--muted);margin-top:.12rem}
+.row .when{
+  font-family:var(--mono);font-size:.72rem;color:var(--muted);white-space:nowrap
+}
+.count{font-family:var(--mono);font-size:.8rem;color:var(--ink)}
 
-  ul { padding-left: 0; list-style: none; margin: 0; }
-  li { margin-bottom: 18px; }
-  li:last-child { margin-bottom: 0; }
+.plain{font-size:.96rem;color:var(--muted)}
+footer{
+  margin-top:4rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+  font-family:var(--mono);font-size:.72rem;color:var(--muted);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap
+}
+footer a{color:var(--muted);border-bottom-color:var(--rule)}
 
-  .title { display: block; }
-  .authors { color: var(--muted); font-size: 15.5px; }
-  .venue { color: var(--muted); font-size: 15.5px; font-style: italic; }
-  .me { font-weight: 600; font-style: normal; color: var(--ink); }
-
-  .role { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .role .where { font-weight: 600; }
-  .role .when {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: var(--muted);
-    white-space: nowrap;
-  }
-  .detail { color: var(--muted); font-size: 16px; margin: 2px 0 0; }
-
-  .compact li { margin-bottom: 11px; }
-
-  footer {
-    margin-top: 46px;
-    border-top: 1px solid var(--rule);
-    padding-top: 18px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    color: var(--muted);
-  }
-
-  @media (max-width: 620px) {
-    body { padding: 36px 20px 72px; font-size: 16.5px; }
-    h1 { font-size: 29px; }
-    .intro { flex-direction: column; gap: 20px; }
-    .intro img { width: 150px; height: 180px; }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #ececea;
-      --muted: #a3a3a0;
-      --rule: #33322f;
-      --link: #e08f96;
-      --bg: #16150f;
-    }
-    a { border-bottom-color: rgba(224,143,150,.35); }
-  }
+@media (max-width:620px){
+  body{font-size:16px}
+  header{flex-direction:column;gap:1.25rem;padding-top:2.25rem}
+  header img{width:92px;height:92px}
+  h1{font-size:1.75rem}
+  .entry{grid-template-columns:1fr;gap:0}
+  .meta{grid-column:1;grid-row:auto;text-align:left;padding:0 0 .5rem;order:-1}
+  .row{flex-direction:column;gap:.2rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
-<h1>Ali Iranmanesh</h1>
+<nav>
+  <a href="/publications">Publications</a>
+  <a href="/static/cv.pdf">CV</a>
+  <a href="/notes">Notes</a>
+</nav>
 
-<div class="intro">
-  <img src="static/Ali.jpg" alt="Ali Iranmanesh">
+<div class="wrap">
+
+<header>
+  <img src="/static/Ali.jpg" alt="Ali Iranmanesh">
   <div>
-    <p>I am an undergraduate at the <strong>Pennsylvania State University</strong>, Schreyer Honors College, studying computer science and graduating in 2027. I work on AI safety and security.</p>
-    <p>My research asks how embodied and multimodal AI systems break when the physical world stops cooperating: typographic attacks on household manipulation robots with <a href="https://s2.ist.psu.edu/pliu/">Peng Liu</a> at Penn State, and adversarial attacks on the vision side of vision language action models with <a href="https://faculty.cs.ucla.edu/yuan-tian/">Yuan Tian</a> at UCLA. I also work on LLM safety evaluation with <a href="https://liweijiang.me/">Liwei Jiang</a>.</p>
-    <p class="links">
-      <a href="static/cv.pdf">CV</a>
+    <h1>Ali Iranmanesh</h1>
+    <p class="topics">AI Safety · Adversarial Robustness · Embodied AI · Evaluation</p>
+    <p class="standfirst">
+      B.S. in Computer Science, Schreyer Honors College, Pennsylvania State University, 2027.
+      <span class="sub">Currently a research assistant at UCLA with
+      <a href="https://faculty.cs.ucla.edu/yuan-tian/">Yuan Tian</a>.</span>
+    </p>
+    <div class="links">
+      <a href="/static/cv.pdf">CV</a>
       <a href="mailto:afi5220@psu.edu">Email</a>
+      <a href="https://scholar.google.com/citations?user=REPLACE_ME">Scholar</a>
       <a href="https://github.com/Aliiiranmanesh">GitHub</a>
       <a href="https://www.linkedin.com/in/aliiiranmanesh/">LinkedIn</a>
-      <a href="https://scholar.google.com/">Google Scholar</a>
-    </p>
+    </div>
   </div>
-</div>
+</header>
+
+<section class="intro">
+  <p>
+    I work on AI safety and security. My interest is in the gap between a system that performs well
+    under evaluation and one that holds up when the world stops cooperating: text placed on a physical
+    object that redirects a manipulation robot, a perturbation that breaks the moment a model decides
+    which object an instruction refers to, advice that is technically correct and useless to the person
+    who has to live with it. In each case the failure is not noise. It is a property of how the system
+    was built and what its evaluation was never designed to notice.
+  </p>
+  <p>
+    Right now that means adversarial attacks on vision language action models with
+    <a href="https://faculty.cs.ucla.edu/yuan-tian/">Yuan Tian</a> at UCLA, typographic attacks on
+    household manipulation robots with <a href="https://s2.ist.psu.edu/pliu/">Peng Liu</a> at Penn State,
+    and LLM safety evaluation with <a href="https://liweijiang.me/">Liwei Jiang</a>.
+  </p>
+  <p>
+    I am applying to PhD programs for Fall 2027. If you work on robustness of embodied systems,
+    multimodal attacks, or safety evaluation, I would like to hear from you.
+  </p>
+</section>
 
 <section>
   <h2>Publications</h2>
-  <ul>
-    <li>
-      <span class="title">HearsayBench: Can LLMs Navigate from Abstract Human Rights to Lived Lives?</span>
-      <span class="authors"><span class="me">Ali Iranmanesh</span>*, Ava Iranmanesh*, Sobhan Lotfi*, Liwei Jiang</span><br>
-      <span class="venue">Submitted to NeurIPS 2026</span>
-    </li>
-    <li>
-      <span class="title">Not What You Asked For: Typographic Attacks in Household Robot Manipulation</span>
-      <span class="authors"><span class="me">Ali Iranmanesh</span>, Peng Liu</span><br>
-      <span class="venue">In submission, USENIX Security 2027</span>
-    </li>
-  </ul>
+
+  <div class="entry">
+    <div class="meta">NeurIPS 2026<br>D&amp;B Track</div>
+    <span class="badge pending">Under review</span>
+    <p class="title">
+      <a href="https://aliiiranmanesh.github.io/hearSay/">HearSayBench: Can LLMs Navigate from Abstract Human Rights to Lived Lives?</a>
+    </p>
+    <p class="authors"><strong>Ali Iranmanesh</strong>*, Ava Iranmanesh*, Sobhan Lotfi*, Liwei Jiang</p>
+    <p class="blurb">
+      A benchmark probing whether models recognize the unstated structural constraints that make standard
+      advice impossible for people living under adversarial conditions. Across 11 frontier and open weight
+      models we find a systemic 37% drop between understanding a situation and giving advice that respects it.
+      Oral at the Pluralistic Alignment Workshop, ICML 2026.
+    </p>
+    <p class="filelinks">
+      <a href="https://aliiiranmanesh.github.io/hearSay/">Project page</a><span>/</span><a href="#">PDF</a><span>/</span><a href="#">Code</a>
+    </p>
+  </div>
+
+  <div class="entry">
+    <div class="meta">USENIX Security<br>2027</div>
+    <span class="badge pending">In submission</span>
+    <p class="title">Not What You Asked For: Typographic Attacks in Household Robot Manipulation</p>
+    <p class="authors"><strong>Ali Iranmanesh</strong>, Peng Liu</p>
+    <p class="blurb">
+      Text placed on ordinary objects in a room can override the instruction a manipulation robot was given,
+      without touching the model, the prompt, or the network. We characterize which placements transfer across
+      scenes and why the vision language backbone treats printed text as instruction rather than as scenery.
+    </p>
+    <p class="filelinks">
+      <a href="#">arXiv</a><span>/</span><a href="#">Code</a>
+    </p>
+  </div>
 </section>
 
 <section>
   <h2>Research</h2>
-  <ul>
-    <li>
-      <div class="role"><span class="where">University of California, Los Angeles</span><span class="when">Jul 2026 to present</span></div>
-      <p class="detail">Robustness of vision language action models. Adversarial attacks on the binding stage, where the model decides which object in a scene an instruction refers to. With Yuan Tian.</p>
-    </li>
-    <li>
-      <div class="role"><span class="where">Penn State University</span><span class="when">Aug 2025 to present</span></div>
-      <p class="detail">Typographic attacks against vision language models in household manipulation robots, and how text placed in the physical world can jailbreak them. Also pointer alignment bugs in Rust packages that crash programs on embedded and constrained systems. With Peng Liu.</p>
-    </li>
-    <li>
-      <div class="role"><span class="where">University of Washington</span><span class="when">Jan 2026 to May 2026</span></div>
-      <p class="detail">LLM safety and alignment. Built evaluation frameworks that benchmark model behavior in real world contexts and surface systematic risks for underrepresented groups who rely on LLMs for advice. With Liwei Jiang.</p>
-    </li>
-    <li>
-      <div class="role"><span class="where">Hong Kong University of Science and Technology</span><span class="when">Jun 2024 to Aug 2024</span></div>
-      <p class="detail">Performance of database management systems on GPUs, focused on query algorithms for accelerated workloads.</p>
-    </li>
-  </ul>
+
+  <div class="entry">
+    <div class="meta">2026, Present<br>Los Angeles</div>
+    <p class="role">Research Assistant</p>
+    <p class="where">University of California, Los Angeles</p>
+    <p class="blurb">
+      With <a href="https://faculty.cs.ucla.edu/yuan-tian/">Yuan Tian</a>. Robustness of vision language action
+      models, focused on the binding stage where the model commits to which object in a scene an instruction
+      refers to, and what an attacker can do to that commitment.
+    </p>
+  </div>
+
+  <div class="entry">
+    <div class="meta">2025, Present<br>State College</div>
+    <p class="role">Research Assistant</p>
+    <p class="where">Pennsylvania State University</p>
+    <p class="blurb">
+      With <a href="https://s2.ist.psu.edu/pliu/">Peng Liu</a>. Typographic attacks against vision language models
+      in household manipulation robots, and how text placed in the physical world can jailbreak them. Separately,
+      pointer alignment bugs in Rust packages that crash programs on embedded and constrained systems.
+    </p>
+  </div>
+
+  <div class="entry">
+    <div class="meta">Jan, May 2026<br>Seattle</div>
+    <p class="role">Research Assistant</p>
+    <p class="where">University of Washington</p>
+    <p class="blurb">
+      With <a href="https://liweijiang.me/">Liwei Jiang</a>. LLM safety and alignment. Built evaluation frameworks
+      that measure model behavior in real world contexts and surface systematic risks for underrepresented groups
+      who rely on models for advice.
+    </p>
+  </div>
+
+  <div class="entry">
+    <div class="meta">Summer 2024<br>Hong Kong</div>
+    <p class="role">Exchange Undergraduate Researcher</p>
+    <p class="where">Hong Kong University of Science and Technology</p>
+    <p class="blurb">
+      Performance of database management systems on GPUs, focused on query algorithms for accelerated workloads.
+    </p>
+  </div>
 </section>
 
 <section>
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <span class="title"><a href="https://github.com/Aliiiranmanesh">Perkie</a></span>
-      <p class="detail">A Flutter fintech app that uses LLMs to optimize credit card rewards. It keeps a live database of card offers, serving cached results and scraping again when new cards or deals appear. Cofounded, Nov 2025 to present.</p>
-    </li>
-    <li>
-      <span class="title"><a href="https://github.com/Aliiiranmanesh">HomeBase</a></span>
-      <p class="detail">An LLM powered scheduling and payroll platform with an integrated chat system.</p>
-    </li>
-    <li>
-      <span class="title"><a href="https://github.com/Aliiiranmanesh">Fidibook</a></span>
-      <p class="detail">A cross platform e-reader and audiobook player built with Flutter and Java.</p>
-    </li>
-  </ul>
+  <h2>Awards</h2>
+
+  <div class="row">
+    <div class="left">
+      <div class="name">Erickson Discovery Grant</div>
+      <div class="note">Independent undergraduate research under faculty mentorship.
+        <span class="count">10 of the university</span></div>
+    </div>
+    <div class="when">2026</div>
+  </div>
+
+  <div class="row">
+    <div class="left">
+      <div class="name">Evan Pugh Award</div>
+      <div class="note">Penn State juniors and seniors. <span class="count">Top 0.5%</span> of the class</div>
+    </div>
+    <div class="when">2026</div>
+  </div>
+
+  <div class="row">
+    <div class="left">
+      <div class="name">Open Doors Honors and Chancellor's Scholarship</div>
+      <div class="note">Full cost support for Schreyer Scholars with exceptional academic and leadership records.</div>
+    </div>
+    <div class="when">2026</div>
+  </div>
+
+  <div class="row">
+    <div class="left">
+      <div class="name">President Walker Award</div>
+      <div class="note">4.0 GPA across the first year of study at Penn State.</div>
+    </div>
+    <div class="when">2025</div>
+  </div>
+
+  <div class="row">
+    <div class="left">
+      <div class="name">Gold Medal, Persian Young Physicists' Tournament</div>
+      <div class="note">National team qualification for the International Young Physicists' Tournament.</div>
+    </div>
+    <div class="when">2020</div>
+  </div>
 </section>
 
 <section>
-  <h2>Honors</h2>
-  <ul class="compact">
-    <li>
-      <div class="role"><span class="where">B. &amp; L. Gall Open Doors, Whitney Open Doors Honors, Chancellor's Scholarship</span><span class="when">2026</span></div>
-      <p class="detail">Full cost support for Schreyer Scholars with exceptional academic and leadership records.</p>
-    </li>
-    <li>
-      <div class="role"><span class="where">Erickson Discovery Grant</span><span class="when">2026</span></div>
-      <p class="detail">Awarded to ten students university wide for independent research under faculty mentorship.</p>
-    </li>
-    <li>
-      <div class="role"><span class="where">Evan Pugh Award</span><span class="when">2026</span></div>
-      <p class="detail">Top 0.5 percent of the junior and senior class at Penn State.</p>
-    </li>
-    <li>
-      <div class="role"><span class="where">President Walker Award</span><span class="when">2025</span></div>
-      <p class="detail">For a 4.0 GPA in the first year of study at Penn State.</p>
-    </li>
-    <li>
-      <div class="role"><span class="where">Gold Medal, Persian Young Physicists' Tournament</span><span class="when">2020</span></div>
-      <p class="detail">National team qualification for the International Young Physicists' Tournament.</p>
-    </li>
-  </ul>
+  <h2>Building</h2>
+
+  <div class="row">
+    <div class="left">
+      <div class="name"><a href="https://github.com/Aliiiranmanesh">Perkie</a></div>
+      <div class="note">Cofounded. A Flutter fintech app that uses LLMs to optimize credit card rewards,
+        keeping a live database of offers and rescraping when new cards appear.</div>
+    </div>
+    <div class="when">2025, Present</div>
+  </div>
+
+  <div class="row">
+    <div class="left">
+      <div class="name"><a href="https://github.com/Aliiiranmanesh">HomeBase</a></div>
+      <div class="note">An LLM powered scheduling and payroll platform with an integrated chat system.</div>
+    </div>
+    <div class="when">2025</div>
+  </div>
+
+  <div class="row">
+    <div class="left">
+      <div class="name"><a href="https://github.com/Aliiiranmanesh">Fidibook</a></div>
+      <div class="note">A cross platform e reader and audiobook player built with Flutter and Java.</div>
+    </div>
+    <div class="when">2024</div>
+  </div>
 </section>
 
 <section>
-  <h2>Service and Teaching</h2>
-  <ul class="compact">
-    <li>
-      <div class="role"><span class="where">Reviewer, ICML 2026</span><span class="when">2026</span></div>
-      <p class="detail">Reviewed submissions on LLM evaluation and AI safety.</p>
-    </li>
-    <li>
-      <div class="role"><span class="where">Teaching Assistant, Penn State</span><span class="when">2025 to present</span></div>
-      <p class="detail">Data Structures and Algorithms, Computer Organization and Architecture. Peer tutor for 100 through 400 level CMPSC and MATH courses.</p>
-    </li>
-    <li>
-      <div class="role"><span class="where">Resident Assistant, Residence Life</span><span class="when">2025 to present</span></div>
-    </li>
-    <li>
-      <div class="role"><span class="where">Vice President, Multi-Cultural Council</span><span class="when">2025 to 2026</span></div>
-    </li>
-    <li>
-      <div class="role"><span class="where">President, Cybersecurity Society</span><span class="when">2024 to 2025</span></div>
-      <p class="detail">Ran technical workshops and competitive hacking teams.</p>
-    </li>
-  </ul>
+  <h2>Service</h2>
+  <p class="plain">
+    Reviewer for ICML 2026, on submissions in LLM evaluation and AI safety. Teaching assistant at Penn State for
+    Data Structures and Algorithms, Computer Organization and Architecture, and Communication Networks, and peer
+    tutor across 100 to 400 level CMPSC and MATH courses. Previously vice president of the Multi Cultural Council
+    and president of the Cybersecurity Society. Full details in the <a href="/static/cv.pdf">CV</a>.
+  </p>
 </section>
 
 <footer>
-  afi5220 at psu.edu &nbsp;&middot;&nbsp; State College, PA
+  <span>afi5220 at psu.edu · State College, PA</span>
+  <span>Last updated August 2026</span>
 </footer>
 
+</div>
 </body>
 </html>
