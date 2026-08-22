@@ -5,237 +5,387 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ali Iranmanesh</title>
 <meta name="description" content="Ali Iranmanesh. Undergraduate researcher in AI safety and security: embodied AI, adversarial robustness, systems security.">
-
 <meta property="og:title" content="Ali Iranmanesh">
 <meta property="og:description" content="Undergraduate researcher in AI safety and security: embodied AI, adversarial robustness, systems security.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aliiiranmanesh.github.io/">
+<meta property="og:image" content="https://aliiiranmanesh.github.io/static/Ali.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<main class="wrap">
+<div class="app-shell">
 
-  <header class="masthead">
-    <div class="portrait">
-      <img src="static/Ali.jpg" alt="Ali Iranmanesh">
-    </div>
-    <div>
-      <h1>Ali Iranmanesh</h1>
-      <p class="fields">AI Safety & Security &middot; Embodied AI Security &middot; Adversarial Robustness</p>
-      <p class="affil">
-        Senior pursuing a B.Sc. in Computer Science, Schreyer Honors College, Penn State University.
-        I research how embodied and multimodal systems break when the physical world stops cooperating.
-      </p>
-      <ul class="contact">
-        <li><a href="mailto:afi5220@psu.edu">Email</a></li>
-        <li><a href="https://scholar.google.com/">Scholar</a></li>
-        <li><a href="films.html">Films</a></li>
-      </ul>
-    </div>
+  <header class="top-bar top-bar-home">
+    <div class="name-block"></div>
+    <nav class="nav-links">
+      <a class="nav-link nav-link-active" href="index.html">home</a>
+      <a class="nav-link" href="films.html">films</a>
+    </nav>
   </header>
 
-  <div class="bio">
-    <p>I work on AI safety and security. My research asks how embodied and multimodal systems break when the physical world stops cooperating: typographic attacks on household manipulation robots, and adversarial attacks on the vision side of vision-language-action models. I also work on LLM safety evaluation.</p>
-    <p class="prior">Previously: securing resource-constrained systems written in Rust.</p>
-  </div>
+  <main class="home">
 
-  <section>
-    <h2>Publications</h2>
+    <section class="bio-section">
+      <div class="bio-text">
+        <h1 class="brand-name" id="typed" data-text="Ali Iranmanesh">Ali Iranmanesh</h1>
 
-    <article class="entry">
-      <div class="meta">
-        <span class="venue">NeurIPS 2026</span>
-        <span class="note">Datasets &amp; Benchmarks</span>
-        <span class="stamp-tag">Submitted</span>
+        <p>
+          I am a senior pursuing a B.Sc. in Computer Science at the
+          <a href="https://www.shc.psu.edu/" target="_blank" rel="noreferrer">Schreyer Honors College</a>,
+          Penn State University. I work on AI safety and security.
+        </p>
+        <p>
+          My research asks how embodied and multimodal systems break when the physical world stops
+          cooperating: typographic attacks on household manipulation robots, and adversarial attacks
+          on the vision side of vision-language-action models. I also work on LLM safety evaluation.
+        </p>
+        <p>Previously: securing resource-constrained systems written in Rust.</p>
+
+        <p class="contact-row">
+          <a href="mailto:afi5220@psu.edu">email</a>
+          <span class="sep">/</span>
+          <a href="static/cv.pdf">cv</a>
+          <span class="sep">/</span>
+          <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">scholar</a>
+          <span class="sep">/</span>
+          <a href="https://www.linkedin.com/in/aliiiranmanesh/" target="_blank" rel="noreferrer">linkedin</a>
+          <span class="sep">/</span>
+          <a href="https://github.com/Aliiiranmanesh" target="_blank" rel="noreferrer">github</a>
+          <span class="sep">/</span>
+          <a href="films.html">films</a>
+        </p>
       </div>
-      <div>
-        <p class="title"><a href="https://aliiiranmanesh.github.io/hearSay/">HearSayBench: Can LLMs Navigate from Abstract Human Rights to Lived Lives?</a></p>
-        <p class="authors"><span class="me">Ali Iranmanesh</span>*, Ava Iranmanesh*, Sobhan Lotfi*, Liwei Jiang</p>
-        <p class="blurb">A benchmark probing whether models recognize the unstated structural constraints that make standard advice impossible for people in adversarial conditions. Across 11 frontier and open-weight models we find a systemic 37% drop between understanding a situation and giving advice that respects it. Oral at the Pluralistic Alignment Workshop, ICML 2026.</p>
-        <p class="links"><a href="https://aliiiranmanesh.github.io/hearSay/">Project page</a></p>
+
+      <div class="bio-portrait">
+        <a href="static/Ali.jpg">
+          <img src="static/Ali.jpg" alt="Ali Iranmanesh">
+        </a>
       </div>
-    </article>
+    </section>
 
-    <article class="entry">
-      <div class="meta">
-        <span class="venue">USENIX Security 2027</span>
-        <span class="stamp-tag">Submitting</span>
+    <section class="section">
+      <h2 class="section-heading">research</h2>
+      <p class="section-blurb">
+        Ali works on AI safety and security, with a focus on embodied AI, adversarial robustness,
+        and LLM evaluation.
+      </p>
+
+      <div class="entry-list">
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-venue">NeurIPS 2026</div>
+            <p class="entry-stamp">Submitted</p>
+            <p class="entry-stamp">Datasets &amp; Benchmarks</p>
+          </div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://aliiiranmanesh.github.io/hearSay/">
+              HearSayBench: Can LLMs Navigate from Abstract Human Rights to Lived Lives?
+            </a>
+            <p class="entry-authors"><strong>Ali Iranmanesh</strong>*, Ava Iranmanesh*, Sobhan Lotfi*, Liwei Jiang</p>
+            <p class="entry-blurb">
+              A benchmark probing whether models recognize the unstated structural constraints that
+              make standard advice impossible for people in adversarial conditions. Across 11 frontier
+              and open-weight models we find a systemic 37% drop between understanding a situation and
+              giving advice that respects it. Oral at the Pluralistic Alignment Workshop, ICML 2026.
+            </p>
+            <p class="entry-links"><a href="https://aliiiranmanesh.github.io/hearSay/">project page</a></p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-venue">USENIX Security 2027</div>
+            <p class="entry-stamp">Submitting</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">
+              Not What You Asked For: Typographic Attacks in Household Robot Manipulation
+            </p>
+            <p class="entry-authors"><strong>Ali Iranmanesh</strong>, Peng Liu</p>
+            <p class="entry-blurb">
+              We show how physical-world text perturbations placed in a household scene can jailbreak
+              vision-language manipulation robots, steering the binding stage that decides which object
+              an instruction refers to, without touching the model itself.
+            </p>
+          </div>
+        </article>
+
       </div>
-      <div>
-        <p class="title">Not What You Asked For: Typographic Attacks in Household Robot Manipulation</p>
-        <p class="authors"><span class="me">Ali Iranmanesh</span>, Peng Liu</p>
-        <p class="blurb">We show how physical-world text perturbations placed in a household scene can jailbreak vision-language manipulation robots — steering the binding stage that decides which object an instruction refers to, without touching the model itself.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-heading">experience</h2>
+
+      <div class="entry-list entry-list-tight">
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-year">2026</div>
+            <p class="entry-stamp">Jul to present, Los Angeles</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Research Assistant, UCLA</p>
+            <p class="entry-authors">Supervised by Yuan Tian</p>
+            <p class="entry-blurb">
+              Investigating robustness of vision-language-action models: adversarial attacks against
+              the binding stage, where the model decides which object in a scene an instruction refers to.
+            </p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-year">2025</div>
+            <p class="entry-stamp">Aug to present, State College</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Research Assistant, Penn State University</p>
+            <p class="entry-authors">Supervised by Peng Liu</p>
+            <p class="entry-blurb">
+              AI security and robustness of embodied systems: typographic attacks against
+              vision-language models in household manipulation robots. Also uncovering
+              pointer-alignment bugs in Rust packages that crash programs in resource-constrained
+              and embedded systems.
+            </p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-year">2026</div>
+            <p class="entry-stamp">Jan to May, Seattle</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Research Assistant, University of Washington</p>
+            <p class="entry-authors">Supervised by Liwei Jiang</p>
+            <p class="entry-blurb">
+              LLM safety and alignment: developing novel evaluation frameworks to benchmark model
+              behavior in real-world contexts and uncovering systematic risks faced by
+              underrepresented groups who rely on LLMs for advice.
+            </p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-year">2025</div>
+            <p class="entry-stamp">Nov to present, State College</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Co-Founder, Perkie</p>
+            <p class="entry-blurb">
+              A fintech app built with Flutter that uses LLMs to optimize credit card rewards.
+              Maintains a live database of card offers, serving cached results and triggering fresh
+              scraping when new cards or deals appear.
+            </p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-year">2024</div>
+            <p class="entry-stamp">Jun to Aug, Hong Kong</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Exchange Undergraduate Researcher, HKUST</p>
+            <p class="entry-blurb">
+              Performance optimization of database management systems on GPUs, focused on advanced
+              querying algorithms for accelerated workloads.
+            </p>
+          </div>
+        </article>
+
       </div>
-    </article>
-  </section>
+    </section>
 
-  <section>
-    <h2>Experience</h2>
+    <section class="section">
+      <h2 class="section-heading">projects</h2>
 
-    <article class="entry">
-      <div class="meta"><span class="venue">2026</span><span class="note">Jul – present, Los Angeles</span></div>
-      <div>
-        <p class="role">Research Assistant, UCLA</p>
-        <p class="org">Supervised by Yuan Tian</p>
-        <p class="detail">Investigating robustness of vision-language-action models: adversarial attacks against the binding stage, where the model decides which object in a scene an instruction refers to.</p>
+      <div class="entry-list entry-list-tight">
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-project">project</div>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">HomeBase</p>
+            <p class="entry-blurb">An LLM-powered scheduling and payroll platform with an integrated chat system.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-project">project</div>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Fidibook</p>
+            <p class="entry-blurb">A cross-platform e-reader and audiobook player built with Flutter and Java.</p>
+          </div>
+        </article>
+
       </div>
-    </article>
+    </section>
 
-    <article class="entry">
-      <div class="meta"><span class="venue">2025</span><span class="note">Aug – present, State College</span></div>
-      <div>
-        <p class="role">Research Assistant, Penn State University</p>
-        <p class="org">Supervised by Peng Liu</p>
-        <p class="detail">AI security and robustness of embodied systems: typographic attacks against vision-language models in household manipulation robots. Also uncovering pointer-alignment bugs in Rust packages that crash programs in resource-constrained and embedded systems.</p>
+    <section class="section">
+      <h2 class="section-heading">honors &amp; awards</h2>
+
+      <div class="entry-list entry-list-tight">
+
+        <article class="entry">
+          <div class="entry-side"><div class="tag tag-award">2026</div></div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Erickson Discovery Grant</p>
+            <p class="entry-blurb">Awarded to support independent undergraduate research under faculty mentorship.</p>
+            <p class="entry-scale"><span class="scale-figure">10</span> students selected university-wide</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side"><div class="tag tag-award">2026</div></div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Evan Pugh Award</p>
+            <p class="entry-scale"><span class="scale-figure">Top 0.5%</span> of juniors and seniors, Penn State</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side"><div class="tag tag-award">2026</div></div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">B.&amp;L. Gall Open Doors, Whitney Open Doors Honors, Chancellor's Scholarship</p>
+            <p class="entry-blurb">Full-cost support awarded to Schreyer Scholars for exceptional academic and leadership achievement.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side"><div class="tag tag-award">2025</div></div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">President Walker Award</p>
+            <p class="entry-blurb">Presented to undergraduates who earned a 4.0 GPA in their first year of study.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side"><div class="tag tag-award">2020</div></div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Gold Medal, Persian Young Physicists' Tournament</p>
+            <p class="entry-blurb">National team qualification phase for the International Young Physicists' Tournament.</p>
+          </div>
+        </article>
+
       </div>
-    </article>
+    </section>
 
-    <article class="entry">
-      <div class="meta"><span class="venue">2026</span><span class="note">Jan – May, Seattle</span></div>
-      <div>
-        <p class="role">Research Assistant, University of Washington</p>
-        <p class="org">Supervised by Liwei Jiang</p>
-        <p class="detail">LLM safety and alignment: developing novel evaluation frameworks to benchmark model behavior in real-world contexts and uncovering systematic risks faced by underrepresented groups who rely on LLMs for advice.</p>
+    <section class="section">
+      <h2 class="section-heading">service &amp; teaching</h2>
+
+      <div class="entry-list entry-list-tight">
+
+        <article class="entry">
+          <div class="entry-side"><div class="tag tag-service">2026</div></div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Reviewer, ICML 2026</p>
+            <p class="entry-blurb">Reviewed research submissions on LLM evaluation and AI safety for a top-tier machine learning venue.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-service">2025</div>
+            <p class="entry-stamp">to present</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Teaching Assistant, Penn State University</p>
+            <p class="entry-blurb">
+              TA for Data Structures and Algorithms, Computer Organization and Architecture, and
+              Communication Networks. Peer tutor for 100 to 400 level CMPSC and MATH courses.
+            </p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-service">2025</div>
+            <p class="entry-stamp">to present</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Resident Assistant, Residence Life</p>
+            <p class="entry-blurb">Managed residential communities, enforced university policies, and supported student success and well-being.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-service">2025</div>
+            <p class="entry-stamp">to 2026</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">Vice President, Multi-Cultural Council</p>
+            <p class="entry-blurb">Led council operations, coordinated campus-wide diversity initiatives, and advocated for inclusive programming across student organizations.</p>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-side">
+            <div class="tag tag-service">2024</div>
+            <p class="entry-stamp">to 2025</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-title entry-title-plain">President, Cybersecurity Society</p>
+            <p class="entry-blurb">Led campus-wide cybersecurity initiatives, technical workshops, and competitive hacking teams.</p>
+          </div>
+        </article>
+
       </div>
-    </article>
+    </section>
 
-    <article class="entry">
-      <div class="meta"><span class="venue">2025</span><span class="note">Nov – present, State College</span></div>
-      <div>
-        <p class="role">Co-Founder, Perkie</p>
-        <p class="detail">A fintech app built with Flutter that uses LLMs to optimize credit card rewards. Maintains a live database of card offers, serving cached results and triggering fresh scraping when new cards or deals appear.</p>
-      </div>
-    </article>
+    <footer class="site-footer">
+      <p>
+        afi5220@psu.edu / State College, PA /
+        <a href="https://github.com/Aliiiranmanesh" target="_blank" rel="noreferrer">github</a> /
+        <a href="https://www.linkedin.com/in/aliiiranmanesh/" target="_blank" rel="noreferrer">linkedin</a> /
+        <a href="static/cv.pdf">cv</a>
+      </p>
+      <p class="footer-stamp">Last updated August 2026</p>
+    </footer>
 
-    <article class="entry">
-      <div class="meta"><span class="venue">2024</span><span class="note">Jun – Aug, Hong Kong</span></div>
-      <div>
-        <p class="role">Exchange Undergraduate Researcher, HKUST</p>
-        <p class="detail">Performance optimization of database management systems on GPUs, focused on advanced querying algorithms for accelerated workloads.</p>
-      </div>
-    </article>
-  </section>
+  </main>
+</div>
 
-  <section>
-    <h2>Projects</h2>
+<script>
+(function () {
+  var el = document.getElementById('typed');
+  if (!el) return;
+  var text = el.dataset.text || el.textContent.trim();
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    <article class="entry">
-      <div class="meta"><span class="venue">Project</span></div>
-      <div>
-        <p class="title">HomeBase</p>
-        <p class="blurb">An LLM-powered scheduling and payroll platform with an integrated chat system.</p>
-      </div>
-    </article>
+  if (reduce) {
+    el.innerHTML = text + '<span class="typing-cursor">|</span>';
+    return;
+  }
 
-    <article class="entry">
-      <div class="meta"><span class="venue">Project</span></div>
-      <div>
-        <p class="title">Fidibook</p>
-        <p class="blurb">A cross-platform e-reader and audiobook player built with Flutter and Java.</p>
-      </div>
-    </article>
-  </section>
+  el.textContent = '';
+  var cursor = document.createElement('span');
+  cursor.className = 'typing-cursor';
+  cursor.textContent = '|';
+  el.appendChild(cursor);
 
-  <section>
-    <h2>Honors &amp; Awards</h2>
-
-    <article class="entry award">
-      <div class="meta"><span class="venue">2026</span></div>
-      <div>
-        <p class="title">Erickson Discovery Grant</p>
-        <p class="blurb">Awarded to support independent undergraduate research under faculty mentorship.</p>
-        <p class="blurb"><span class="scale">10<small>students selected university-wide</small></span></p>
-      </div>
-    </article>
-
-    <article class="entry award">
-      <div class="meta"><span class="venue">2026</span></div>
-      <div>
-        <p class="title">Evan Pugh Award</p>
-        <p class="blurb"><span class="scale">Top 0.5%<small>of juniors and seniors, Penn State</small></span></p>
-      </div>
-    </article>
-
-    <article class="entry award">
-      <div class="meta"><span class="venue">2026</span></div>
-      <div>
-        <p class="title">B.&amp;L. Gall Open Doors, Whitney Open Doors Honors, Chancellor's Scholarship</p>
-        <p class="blurb">Full-cost support awarded to Schreyer Scholars for exceptional academic and leadership achievement.</p>
-      </div>
-    </article>
-
-    <article class="entry award">
-      <div class="meta"><span class="venue">2025</span></div>
-      <div>
-        <p class="title">President Walker Award</p>
-        <p class="blurb">Presented to undergraduates who earned a 4.0 GPA in their first year of study.</p>
-      </div>
-    </article>
-
-    <article class="entry award">
-      <div class="meta"><span class="venue">2020</span></div>
-      <div>
-        <p class="title">Gold Medal, Persian Young Physicists' Tournament</p>
-        <p class="blurb">National team qualification phase for the International Young Physicists' Tournament.</p>
-      </div>
-    </article>
-  </section>
-
-  <section>
-    <h2>Service &amp; Teaching</h2>
-
-    <article class="entry">
-      <div class="meta"><span class="venue">2026</span></div>
-      <div>
-        <p class="role">Reviewer, ICML 2026</p>
-        <p class="detail">Reviewed research submissions on LLM evaluation and AI safety for a top-tier machine learning venue.</p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <div class="meta"><span class="venue">2025</span><span class="note">– present</span></div>
-      <div>
-        <p class="role">Teaching Assistant, Penn State University</p>
-        <p class="detail">TA for Data Structures and Algorithms, Computer Organization and Architecture, and Communication Networks. Peer tutor for 100–400 level CMPSC and MATH courses.</p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <div class="meta"><span class="venue">2025</span><span class="note">– present</span></div>
-      <div>
-        <p class="role">Resident Assistant, Residence Life</p>
-        <p class="detail">Managed residential communities, enforced university policies, and supported student success and well-being.</p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <div class="meta"><span class="venue">2025</span><span class="note">– 2026</span></div>
-      <div>
-        <p class="role">Vice President, Multi-Cultural Council</p>
-        <p class="detail">Led council operations, coordinated campus-wide diversity initiatives, and advocated for inclusive programming across student organizations.</p>
-      </div>
-    </article>
-
-    <article class="entry">
-      <div class="meta"><span class="venue">2024</span><span class="note">– 2025</span></div>
-      <div>
-        <p class="role">President, Cybersecurity Society</p>
-        <p class="detail">Led campus-wide cybersecurity initiatives, technical workshops, and competitive hacking teams.</p>
-      </div>
-    </article>
-  </section>
-
-  <footer>
-    <p>afi5220@psu.edu &middot; State College, PA &middot; <a href="https://github.com/Aliiiranmanesh">GitHub</a> &middot; <a href="https://www.linkedin.com/in/aliiiranmanesh/">LinkedIn</a> &middot; <a href="static/cv.pdf">CV</a></p>
-    <p class="stamp">Last updated August 2026</p>
-  </footer>
-
-</main>
+  var i = 0;
+  var timer = setInterval(function () {
+    if (i >= text.length) {
+      clearInterval(timer);
+      cursor.classList.add('typing-cursor-blink');
+      return;
+    }
+    cursor.before(text.charAt(i));
+    i++;
+  }, 70);
+})();
+</script>
 </body>
 </html>
