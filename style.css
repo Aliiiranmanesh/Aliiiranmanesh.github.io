@@ -112,16 +112,6 @@ h2::before{content:"";width:.55rem;height:.55rem;background:var(--accent);border
 .authors{font-size:.97rem;color:var(--muted);margin:0 0 .55rem;line-height:1.55}
 .authors .me{color:var(--ink);font-weight:600}
 .blurb{font-size:1.01rem;color:var(--muted);margin:0;max-width:38rem}
-.tldr{margin:.55rem 0 0}
-.tldr summary{
-  cursor:pointer;list-style:none;font-family:var(--mono);
-  font-size:.82rem;font-weight:500;letter-spacing:.03em;color:var(--accent);
-}
-.tldr summary::-webkit-details-marker{display:none}
-.tldr summary::before{content:"TL;DR ▶"}
-.tldr[open] summary::before{content:"TL;DR ▼"}
-.tldr summary:hover{color:var(--accent-lift)}
-.tldr .blurb{margin-top:.6rem}
 .links{font-family:var(--mono);font-size:.82rem;margin-top:.7rem;display:flex;flex-wrap:wrap;gap:1.1rem}
 
 .role{font-size:1.26rem;font-weight:600;margin:0 0 .25rem;letter-spacing:-.008em}
