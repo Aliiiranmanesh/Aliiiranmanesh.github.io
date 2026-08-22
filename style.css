@@ -10,15 +10,15 @@
   -webkit-font-smoothing: antialiased;
 
   --bg: #ffffff;
-  --text: #1a1a1a;
-  --text-secondary: #555;
-  --text-muted: #999;
-  --link: #2563eb;
-  --link-hover: #1d4ed8;
-  --hover: #2563eb;
-  --border: #e0e0e0;
-  --card-bg: #fafafa;
-  --card-border: #eee;
+  --text: #15160f;
+  --text-secondary: #52544c;
+  --text-muted: #7c7e76;
+  --link: #2f4f42;
+  --link-hover: #3f6b58;
+  --hover: #3f6b58;
+  --border: #d4d4cc;
+  --card-bg: #e4e4dd;
+  --card-border: #d4d4cc;
 
   color: var(--text);
 }
@@ -173,11 +173,11 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-ra
 
 .tag-project { text-transform: lowercase; }
 
-.tag-venue   { background: #fde4ce; color: #7a4416; }
-.tag-year    { background: #ece4d4; color: #5a4a30; }
-.tag-project { background: #e2e8f0; color: #33415c; }
-.tag-award   { background: #f4e0e0; color: #7a3030; }
-.tag-service { background: #e0eee4; color: #2f5d40; }
+.tag-venue   { background: #dfe7e0; color: #2f4f42; }
+.tag-year    { background: #ece7d5; color: #6b5a2b; }
+.tag-project { background: #e2e4de; color: #4a4d44; }
+.tag-award   { background: #f0e6c8; color: #6b5a2b; }
+.tag-service { background: #dfe7e0; color: #2f4f42; }
 
 .entry-stamp {
   margin: 0.5rem 0 0;
