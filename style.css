@@ -35,14 +35,23 @@ a {
   color: var(--link);
   text-decoration: none;
   border-bottom: 1px solid rgba(59, 74, 67, 0.3);
+  background: linear-gradient(to right, var(--link-hover), var(--link-hover)) no-repeat;
+  background-size: 0% 1px;
+  background-position: left calc(100% + 1px);
+  transition: background-size 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
 }
 
 a:hover {
   color: var(--link-hover);
-  border-bottom-color: var(--link-hover);
+  background-size: 100% 1px;
+  border-bottom-color: transparent;
 }
 
-a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+a:focus-visible { 
+  outline: 2px solid var(--link); 
+  outline-offset: 3px; 
+  border-radius: 2px; 
+}
 
 /* ---------- shell ---------- */
 .app-shell {
@@ -218,7 +227,6 @@ a.entry-title { border-bottom-color: transparent; }
 
 a.entry-title:hover {
   color: var(--link-hover);
-  border-bottom-color: var(--link-hover);
 }
 
 .entry-title-plain { color: var(--text); }
