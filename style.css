@@ -9,16 +9,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  --bg: #ffffff;
+  --bg: #F2F2EF;
   --text: #15160f;
   --text-secondary: #63655e;
   --text-muted: #8a8c84;
-  --link: #3B4A43;
-  --link-hover: #6B7A70;
-  --hover: #6B7A70;
+  --link: #183E0C;
+  --link-hover: #225711;
+  --hover: #225711;
   --border: #d4d4cc;
   --card-bg: #e4e4dd;
-  --card-border: #d4d4cc;
 
   color: var(--text);
 }
