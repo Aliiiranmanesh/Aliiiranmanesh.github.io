@@ -3,7 +3,7 @@
 
 :root {
   font-family: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   font-weight: 400;
   text-rendering: optimizeLegibility;
@@ -14,8 +14,8 @@
   --text-secondary: #63655e;
   --text-muted: #8a8c84;
   --link: #183E0C;
-  --link-hover: #225711;
-  --hover: #225711;
+  --link-hover: #378C1B;
+  --hover: #378C1B;
   --border: #d4d4cc;
   --card-bg: #e4e4dd;
 
