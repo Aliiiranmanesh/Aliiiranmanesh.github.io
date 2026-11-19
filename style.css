@@ -109,6 +109,12 @@ a:focus-visible {
   line-height: 1.7;
 }
 
+.bio-portrait {
+  width: 260px;
+  max-width: 100%;
+  margin: 0;
+}
+
 .portrait-frame {
   display: block;
   width: 260px;
@@ -125,6 +131,24 @@ a:focus-visible {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.portrait-caption {
+  margin-top: 1.1rem;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.portrait-caption q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+.portrait-attribution {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--link);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
 }
 
 .contact-row {
@@ -313,8 +337,8 @@ a.entry-title:hover {
 
   .bio-portrait {
     order: -1;
-    display: flex;
-    justify-content: center;
+    width: 200px;
+    justify-self: center;
   }
 
   .bio-portrait img { width: 100%; height: 100%; }
