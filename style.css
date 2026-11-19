@@ -75,7 +75,7 @@ a:focus-visible {
   grid-template-columns: minmax(0, 1fr) 260px;
   gap: 2.5rem;
   align-items: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .brand-name {
@@ -139,6 +139,29 @@ a:focus-visible {
 }
 
 .contact-row .sep { color: var(--text-muted); }
+
+.application-note {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border-left: 3px solid var(--link);
+  background: rgba(59, 74, 67, 0.06);
+  color: var(--text);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.application-note-dot {
+  flex: 0 0 0.4rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--link-hover);
+}
+
+.application-note + .section { margin-top: 2rem; }
 
 /* ---------- sections ---------- */
 .section { margin-top: 3rem; }
